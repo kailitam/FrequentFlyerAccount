@@ -9,12 +9,26 @@
 
 FrequentFlyerAccount::FrequentFlyerAccount(string name)
 {
-
+    mBalance = 0;
+    mName = name;
 }
 
 bool FrequentFlyerAccount::addFlightToAccount(PlaneFlight flight)
 {
     if (flight.getName() == mName)
+    {
+        mBalance += flight.getMileage();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool FrequentFlyerAccount::canEarnFreeFlight(double mileage)
+{
+    if (mBalance >= mileage)
     {
         return true;
     }
@@ -24,4 +38,17 @@ bool FrequentFlyerAccount::addFlightToAccount(PlaneFlight flight)
     }
 }
 
+bool FrequentFlyerAccount::freeFlight(string FromCity, string ToCity, double mileage, PlaneFlight &flight)
+{
+    if (canEarnFreeFlight(mileage))
+    {
+        flight.setCost(0.0);
+        flight.setToCity(ToCity);
+        flight.setFromCity(FromCity);
+        mBalance -= mileage;
+        return true;
+    }
+    
+    return false;
+}
 

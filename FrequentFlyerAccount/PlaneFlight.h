@@ -11,8 +11,6 @@
 #include <stdio.h>
 #include <string>
 
-#endif /* PlaneFlight_h */
-
 using namespace std;
 
 class PlaneFlight
@@ -33,7 +31,7 @@ public:
     void setFromCity(string FromCity);
     
     string getToCity();
-    void setToCity(string FromCity);
+    void setToCity(string ToCity);
     
 private:
     double mCost;
@@ -43,3 +41,4 @@ private:
     double mMileage;
 };
 
+#endif /* PlaneFlight_h */

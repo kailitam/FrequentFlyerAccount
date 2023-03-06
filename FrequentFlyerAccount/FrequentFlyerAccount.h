@@ -12,8 +12,6 @@
 #include <string>
 #include "PlaneFlight.h"
 
-#endif /* FrequentFlyerAccount_h */
-
 using namespace std;
 
 class FrequentFlyerAccount
@@ -33,3 +31,4 @@ private:
     double mBalance;
 };
 
+#endif /* FrequentFlyerAccount_h */
