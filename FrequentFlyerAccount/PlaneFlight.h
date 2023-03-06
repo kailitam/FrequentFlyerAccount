@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <string>
 
+#endif /* PlaneFlight_h */
 
 using namespace std;
 
