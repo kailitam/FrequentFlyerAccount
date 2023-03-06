@@ -20,7 +20,7 @@ public:
     FrequentFlyerAccount(string name);
     
     double getBalance();
-    double getName();
+    string getName();
     
     bool addFlightToAccount(PlaneFlight flight);
     bool canEarnFreeFlight(double mileage);

@@ -43,8 +43,10 @@ bool FrequentFlyerAccount::freeFlight(string FromCity, string ToCity, double mil
     if (canEarnFreeFlight(mileage))
     {
         flight.setCost(0.0);
-        flight.setToCity(ToCity);
         flight.setFromCity(FromCity);
+        flight.setToCity(ToCity);
+        flight.setMileage(mileage);
+        flight.setName(mName);
         mBalance -= mileage;
         return true;
     }
@@ -52,3 +54,12 @@ bool FrequentFlyerAccount::freeFlight(string FromCity, string ToCity, double mil
     return false;
 }
 
+double FrequentFlyerAccount::getBalance()
+{
+    return mBalance;
+}
+
+string FrequentFlyerAccount::getName()
+{
+    return mName;
+}
